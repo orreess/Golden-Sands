@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golden Sands | Настоящий кофе по-турецки</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav>
+        <div class="logo">Golden <span>Sands</span></div>
+        <ul class="nav-links">
+            <li><a href="#menu">Меню</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#contacts">Контакты</a></li>
+            <li><button id="cart-btn" class="btn"><i class="fas fa-shopping-cart"></i> (<span id="cart-count">0</span>)</button></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- Герой-секция с анимацией -->
+    <header data-aos="fade-up">
+        <div class="header-content">
+            <h1 class="animate-pop-in">Кофе с характером</h1>
+            <p class="animate-pop-in">Попробуйте настоящий турецкий кофе с предсказанием судьбы</p>
+            <button class="btn animate-pop-in" onclick="openBooking()">Забронировать столик</button>
+        </div>
+        <div class="coffee-smoke"></div>
+    </header>
+    
+    <!-- О нас -->
+    <section id="about" class="about-section" data-aos="fade-up">
+        <div class="about-content">
+            <h2>500 лет традиций</h2>
+            <p>Турецкий кофе — часть культурного наследия ЮНЕСКО с 2013 года. Мы сохраняем аутентичную технологию приготовления в медных джезвах на горячем песке.</p>
+            <div class="process-steps">
+                <div class="step">
+                    <i class="fas fa-coffee"></i>
+                    <p>Отборные арабика и робуста</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-fire"></i>
+                    <p>Песочная варка</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-magic"></i>
+                    <p>Гадание по гуще</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Меню -->
+    <section id="menu" class="menu-section" data-aos="fade-up">
+        <h2>Наше меню</h2>
+        <div class="filters">
+            <button class="btn filter-btn active" data-category="all">Все</button>
+            <button class="btn filter-btn" data-category="coffee">Кофе</button>
+            <button class="btn filter-btn" data-category="dessert">Десерты</button>
+            <button class="btn filter-btn" data-category="snacks">Закуски</button>
+        </div>
+        
+        <div class="menu-grid" id="menu-grid">
+            <!-- Генерируется JS -->
+        </div>
+    </section>
+
+    <section>
+        <div class="contact-info">
+            <h2>Контакты</h2>
+            <p><i class="fas fa-map-marker-alt"></i> Москва, ул. Арбат, 25</p>
+            <p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
+            <p><i class="fas fa-clock"></i> Ежедневно с 8:00 до 23:00</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Контакты -->
+    <section id="contacts" class="contacts-section" data-aos="fade-up">
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.372951144775!2d37.615310715930664!3d55.75202398055309!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a5a738fa419%3A0x7c347d506f52311f!2z0JzQvtGB0LrQvtCy0YHQutC40Lkg0JrQvtC70LvQtdC00LY!5e0!3m2!1sru!2sru!4v1620000000000!5m2!1sru!2sru" 
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Golden Sands</div>
+            <p>© 2023 Все права защищены</p>
+        </div>
+    </footer>
+
+    <!-- Модальные окна -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ваш заказ</h2>
+            <div id="cart-items"></div>
+            <div id="cart-total">Итого: 0 ₽</div>
+            <button id="checkout" class="btn">Оформить заказ</button>
+        </div>
+    </div>
+
+    <div class="modal" id="booking-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Бронирование столика</h2>
+            <form id="booking-form">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="Телефон" required>
+                <input type="datetime-local" required>
+                <button type="submit" class="btn">Забронировать</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <div class="coffee-beans-animation"></div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+</body>
+</html>
